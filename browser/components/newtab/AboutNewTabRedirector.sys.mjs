@@ -424,22 +424,9 @@ class BaseAboutNewTabRedirector {
    * This URL depends on various activity stream prefs. Overriding
    * the newtab page has no effect on the result of this function.
    */
+  
   get defaultURL() {
-    if (this.remoteRendererEnabled) {
-      return "resource://newtab/data/content/remote-renderer-host.html";
-    }
-
-    // Generate the desired activity stream resource depending on state, e.g.,
-    // "resource://newtab/prerendered/activity-stream.html"
-    // "resource://newtab/prerendered/activity-stream-debug.html"
-    // "resource://newtab/prerendered/activity-stream-noscripts.html"
-    return [
-      "resource://newtab/prerendered/",
-      "activity-stream",
-      this.activityStreamDebug && this.selfLoadingEnabled ? "-debug" : "",
-      this.selfLoadingEnabled ? "" : "-noscripts",
-      ".html",
-    ].join("");
+    return "resource://newtab/prerendered/activity-stream-noscripts.html";
   }
 
   newChannel() {

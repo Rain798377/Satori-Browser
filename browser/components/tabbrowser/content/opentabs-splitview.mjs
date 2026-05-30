@@ -7,7 +7,8 @@ import { MozLitElement } from "chrome://global/content/lit-utils.mjs";
 import { escapeHtmlEntities } from "chrome://browser/content/firefoxview/helpers.mjs";
 
 const lazy = {};
-const BROWSER_NEW_TAB_URL = "about:newtab";
+// const BROWSER_NEW_TAB_URL = "about:newtab";
+const BROWSER_NEW_TAB_URL = "chrome://browser/content/browser/satori-newtab.html"; // Custom newtab URL to bypass Gecko blocking.
 const BROWSER_OPEN_TABS_URL = "about:opentabs";
 
 ChromeUtils.defineESModuleGetters(lazy, {

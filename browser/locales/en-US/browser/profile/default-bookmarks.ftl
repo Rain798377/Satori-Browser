@@ -10,13 +10,13 @@ default-bookmarks-title = Bookmarks
 default-bookmarks-heading = Bookmarks
 
 # Firefox links folder name
-default-bookmarks-firefox-heading = Mozilla Firefox
+default-bookmarks-firefox-heading = Satori Cipher
 
 # link title for https://www.mozilla.org/firefox/help/
 default-bookmarks-firefox-get-help = Get Help
 
 # link title for https://www.mozilla.org/firefox/customize/
-default-bookmarks-firefox-customize = Customize Firefox
+default-bookmarks-firefox-customize = Customize Satori
 
 # link title for https://www.mozilla.org/contribute/
 default-bookmarks-firefox-community = Get Involved
@@ -25,22 +25,22 @@ default-bookmarks-firefox-community = Get Involved
 default-bookmarks-firefox-about = About Us
 
 # Firefox Nightly links folder name
-default-bookmarks-nightly-heading = Firefox Nightly Resources
+default-bookmarks-nightly-heading = Satori Cipher Resources
 
 # Nightly builds only, link title for https://blog.nightly.mozilla.org/
-default-bookmarks-nightly-blog = Firefox Nightly blog
+default-bookmarks-nightly-blog = Satori Cipher blog
 
 # Nightly builds only, link title for https://bugzilla.mozilla.org/
-default-bookmarks-bugzilla = Mozilla Bug Tracker
+default-bookmarks-bugzilla = Satori Bug Tracker
 
 # Nightly builds only, link title for https://developer.mozilla.org/
-default-bookmarks-mdn = Mozilla Developer Network
+default-bookmarks-mdn = Satori Developer Network
 
 # Nightly builds only, link title for https://addons.mozilla.org/firefox/addon/nightly-tester-tools/
-default-bookmarks-nightly-tester-tools = Nightly Tester Tools
+default-bookmarks-nightly-tester-tools = Satori Tester Tools
 
 # Nightly builds only, link title for about:crashes
 default-bookmarks-crashes = All your crashes
 
 # Nightly builds only, link title for https://planet.mozilla.org/
-default-bookmarks-planet = Planet Mozilla
+default-bookmarks-planet = Planet Satori

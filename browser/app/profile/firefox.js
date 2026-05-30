@@ -1816,7 +1816,7 @@ pref("browser.partnerlink.attributionURL", "https://topsites.services.mozilla.co
 pref("browser.partnerlink.campaign.topsites", "amzn_2020_a1");
 
 // Activates preloading of the new tab url.
-pref("browser.newtab.preload", true);
+pref("browser.newtab.preload", false);
 
 // Preonboarding is disabled by default on platforms other than Windows and
 // macOS. For official Mozilla distributions (only for Linux), enabled at
@@ -1848,6 +1848,15 @@ pref("termsofuse.minimumVersion", 4);
 #else
   pref("termsofuse.bypassNotification", true);
 #endif
+
+// Custom prefs
+// pref("browser.newtabpage.enabled", false);
+pref("browser.startup.homepage", "resource://newtab/prerendered/activity-stream-noscripts.html");
+pref("browser.newtab.url", "resource://newtab/prerendered/activity-stream-noscripts.html");
+pref("browser.newtabpage.activity-stream.enabled", false)
+
+// Allow AniList to be whitelisted
+pref("browser.newtabpage.activity-stream.allowedOrigins", "https://graphql.anilist.co");
 
 // Show "Download Firefox for mobile" QR code modal on newtab
 pref("browser.newtabpage.activity-stream.mobileDownloadModal.enabled", false);
@@ -1932,7 +1941,7 @@ pref("messaging-system.askForFeedback", true);
 pref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", true);
 
 // These prefs control if Discovery Stream is enabled.
-pref("browser.newtabpage.activity-stream.discoverystream.enabled", true);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hardcoded-basic-layout", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hybridLayout.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hideCardBackground.enabled", false);
