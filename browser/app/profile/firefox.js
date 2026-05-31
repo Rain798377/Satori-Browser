@@ -1853,7 +1853,9 @@ pref("termsofuse.minimumVersion", 4);
 // pref("browser.newtabpage.enabled", false);
 pref("browser.startup.homepage", "resource://newtab/prerendered/activity-stream-noscripts.html");
 pref("browser.newtab.url", "resource://newtab/prerendered/activity-stream-noscripts.html");
-pref("browser.newtabpage.activity-stream.enabled", false)
+pref("browser.newtabpage.activity-stream.enabled", false);
+pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+pref("browser.tabs.remote.separatePrivilegedContentProcess", false);
 
 // Allow AniList to be whitelisted
 pref("browser.newtabpage.activity-stream.allowedOrigins", "https://graphql.anilist.co");

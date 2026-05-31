@@ -1,0 +1,196 @@
+/* ============================================================
+   SATORI CIPHER — themes.css
+   One CSS var set per theme. Applied via class on <html>.
+   Import this FIRST, then sidebar.css on top.
+   ============================================================ */
+
+/* ── BASE (shared structural vars) ── */
+:root {
+  --sc-radius-sm:   5px;
+  --sc-radius-md:   8px;
+  --sc-radius-lg:   12px;
+  --sc-radius-pill: 99px;
+  --sc-font-sans:   'Noto Sans JP', system-ui, sans-serif;
+  --sc-font-serif:  'Crimson Pro', Georgia, serif;
+  --sc-transition:  0.15s ease;
+}
+
+/* ══════════════════════════════════════
+   SAKURA
+══════════════════════════════════════ */
+html.theme-sakura {
+  --sc-bg-base:        #0f0d12;
+  --sc-bg-raised:      #13101a;
+  --sc-bg-elevated:    #16121c;
+  --sc-bg-hover:       #1d1626;
+  --sc-bg-active:      #261630;
+  --sc-border-subtle:  #1e1824;
+  --sc-border-default: #2a1f2e;
+  --sc-border-strong:  #3d2640;
+  --sc-text-primary:   #e8d5f0;
+  --sc-text-secondary: #a08aaa;
+  --sc-text-muted:     #6b5a72;
+  --sc-text-faint:     #4a3d52;
+  --sc-accent:         #d4537e;
+  --sc-accent-dim:     #993556;
+  --sc-accent-bright:  #f4c0d1;
+  --sc-accent-bg:      #261630;
+  --sc-teal:           #5dcaa5;
+  --sc-loading-bg:     #2a1f2e;
+}
+
+html.theme-sakura.light-mode {
+  --sc-bg-base:        #fdf6f9;
+  --sc-bg-raised:      #f5e8f0;
+  --sc-bg-elevated:    #ecdce8;
+  --sc-bg-hover:       #f0dce8;
+  --sc-bg-active:      #e8ccd8;
+  --sc-border-subtle:  #ecd8e4;
+  --sc-border-default: #dcc0d0;
+  --sc-border-strong:  #c090a8;
+  --sc-text-primary:   #2a1a2e;
+  --sc-text-secondary: #6b4070;
+  --sc-text-muted:     #a878a8;
+  --sc-text-faint:     #c0a0c0;
+  --sc-accent:         #c0547e;
+  --sc-accent-dim:     #903858;
+  --sc-accent-bright:  #e8709a;
+  --sc-accent-bg:      #f5e0ec;
+  --sc-teal:           #3a9a78;
+  --sc-loading-bg:     #dcc0d0;
+}
+
+/* ══════════════════════════════════════
+   CYBERPUNK
+══════════════════════════════════════ */
+html.theme-cyberpunk {
+  --sc-bg-base:        #080c14;
+  --sc-bg-raised:      #0d1220;
+  --sc-bg-elevated:    #111828;
+  --sc-bg-hover:       #162030;
+  --sc-bg-active:      #0a1a2e;
+  --sc-border-subtle:  #0f1c30;
+  --sc-border-default: #1a2e48;
+  --sc-border-strong:  #00f0ff44;
+  --sc-text-primary:   #e0f8ff;
+  --sc-text-secondary: #7ac8d8;
+  --sc-text-muted:     #3a7080;
+  --sc-text-faint:     #1e4050;
+  --sc-accent:         #00f0ff;
+  --sc-accent-dim:     #0099aa;
+  --sc-accent-bright:  #aaf8ff;
+  --sc-accent-bg:      #001820;
+  --sc-teal:           #ff0099;
+  --sc-loading-bg:     #1a2e48;
+}
+
+html.theme-cyberpunk.light-mode {
+  --sc-bg-base:        #f0f8ff;
+  --sc-bg-raised:      #e0f0f8;
+  --sc-bg-elevated:    #cce8f5;
+  --sc-bg-hover:       #d8f0fa;
+  --sc-bg-active:      #b8e0f0;
+  --sc-border-subtle:  #c8e8f5;
+  --sc-border-default: #a0d0e8;
+  --sc-border-strong:  #0088aa55;
+  --sc-text-primary:   #0a2030;
+  --sc-text-secondary: #206080;
+  --sc-text-muted:     #6090a8;
+  --sc-text-faint:     #90b8c8;
+  --sc-accent:         #0088aa;
+  --sc-accent-dim:     #006688;
+  --sc-accent-bright:  #00b8d8;
+  --sc-accent-bg:      #d0eef8;
+  --sc-teal:           #cc0077;
+  --sc-loading-bg:     #a0d0e8;
+}
+
+/* ══════════════════════════════════════
+   SHONEN
+══════════════════════════════════════ */
+html.theme-shonen {
+  --sc-bg-base:        #0d0d0d;
+  --sc-bg-raised:      #131313;
+  --sc-bg-elevated:    #181818;
+  --sc-bg-hover:       #1e1e1e;
+  --sc-bg-active:      #221800;
+  --sc-border-subtle:  #1a1a1a;
+  --sc-border-default: #2a2200;
+  --sc-border-strong:  #ff660055;
+  --sc-text-primary:   #fff5e0;
+  --sc-text-secondary: #d4a040;
+  --sc-text-muted:     #806020;
+  --sc-text-faint:     #403010;
+  --sc-accent:         #ff6600;
+  --sc-accent-dim:     #cc4400;
+  --sc-accent-bright:  #ffdd00;
+  --sc-accent-bg:      #221800;
+  --sc-teal:           #ffdd00;
+  --sc-loading-bg:     #2a2200;
+}
+
+html.theme-shonen.light-mode {
+  --sc-bg-base:        #fffaf0;
+  --sc-bg-raised:      #fff0d8;
+  --sc-bg-elevated:    #ffe5c0;
+  --sc-bg-hover:       #ffecd0;
+  --sc-bg-active:      #ffd8a0;
+  --sc-border-subtle:  #ffe0b0;
+  --sc-border-default: #f0c878;
+  --sc-border-strong:  #cc440055;
+  --sc-text-primary:   #1a0a00;
+  --sc-text-secondary: #804020;
+  --sc-text-muted:     #b07040;
+  --sc-text-faint:     #d0a070;
+  --sc-accent:         #cc4400;
+  --sc-accent-dim:     #993300;
+  --sc-accent-bright:  #ff6600;
+  --sc-accent-bg:      #fff0d0;
+  --sc-teal:           #bb8800;
+  --sc-loading-bg:     #f0c878;
+}
+
+/* ══════════════════════════════════════
+   ISEKAI
+══════════════════════════════════════ */
+html.theme-isekai {
+  --sc-bg-base:        #0a0d18;
+  --sc-bg-raised:      #0e1222;
+  --sc-bg-elevated:    #121628;
+  --sc-bg-hover:       #181c32;
+  --sc-bg-active:      #1e1a40;
+  --sc-border-subtle:  #141830;
+  --sc-border-default: #2a2450;
+  --sc-border-strong:  #7b6fff66;
+  --sc-text-primary:   #e8e0ff;
+  --sc-text-secondary: #a898e8;
+  --sc-text-muted:     #5a5080;
+  --sc-text-faint:     #302860;
+  --sc-accent:         #7b6fff;
+  --sc-accent-dim:     #5040cc;
+  --sc-accent-bright:  #c8b8ff;
+  --sc-accent-bg:      #1e1a40;
+  --sc-teal:           #a0d8ef;
+  --sc-loading-bg:     #2a2450;
+}
+
+html.theme-isekai.light-mode {
+  --sc-bg-base:        #f5f3ff;
+  --sc-bg-raised:      #ede8ff;
+  --sc-bg-elevated:    #e0d8ff;
+  --sc-bg-hover:       #e8e0ff;
+  --sc-bg-active:      #d0c8f8;
+  --sc-border-subtle:  #dcd4ff;
+  --sc-border-default: #c0b0f0;
+  --sc-border-strong:  #7b6fff55;
+  --sc-text-primary:   #0a0820;
+  --sc-text-secondary: #403880;
+  --sc-text-muted:     #8070b0;
+  --sc-text-faint:     #b0a8d0;
+  --sc-accent:         #5545cc;
+  --sc-accent-dim:     #3830aa;
+  --sc-accent-bright:  #7b6fff;
+  --sc-accent-bg:      #e8e0ff;
+  --sc-teal:           #4090b8;
+  --sc-loading-bg:     #c0b0f0;
+}

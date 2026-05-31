@@ -9,8 +9,7 @@ DIRS += [
     "webcompat",
     "pictureinpicture",
     "search-detection",
-    "newtab",
-    "satori-newtab-ext",
+    "newtab"
 ]
 
 JAR_MANIFESTS += ["jar.mn"]

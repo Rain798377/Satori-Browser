@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Satori",
+  "version": "2.0",
+  "description": "Satori — sidebar companion, new tab, AniList tracker",
+  "permissions": [
+    "storage",
+    "theme",
+    "browserSettings",
+    "https://graphql.anilist.co/*"
+  ],
+  "sidebar_action": {
+    "default_title": "Satori",
+    "default_panel": "sidebar.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_security_policy": "script-src 'self'; connect-src https://graphql.anilist.co https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; default-src 'self'",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "satori@satori",
+      "strict_min_version": "109.0"
+    }
+  }
+}

@@ -379,9 +379,12 @@
     const h = String(now.getHours()).padStart(2, '0');
     const m = String(now.getMinutes()).padStart(2, '0');
     document.getElementById('clock').textContent = h + ':' + m;
+
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    document.getElementById('date').textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
+    document.getElementById('date').textContent =
+      days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
+
     const g = greetings[Math.floor(now.getMinutes() / 15) % greetings.length];
     document.getElementById('greeting').textContent = g;
   }
@@ -419,58 +422,42 @@
     return { name: 'Fall', season: 'FALL' };
   }
 
-  function renderShows(shows) {
-    const grid = document.getElementById('airingGrid');
-    grid.innerHTML = shows.slice(0, 5).map(s => `
-      <div class="airing-item">
-        <div class="airing-dot"></div>
-        <span class="airing-title">${s.title.romaji}</span>
-        <span class="airing-ep">${s.nextAiringEpisode ? 'ep ' + s.nextAiringEpisode.episode : '—'}</span>
-      </div>
-    `).join('');
-  }
-
-  function fetchAiring() {
+  async function fetchAiring() {
     const year = new Date().getFullYear();
     const { name, season } = getSeason();
     document.getElementById('seasonName').textContent = name + ' ' + year;
 
-    // Check cache first (1 hour)
-    const cached = localStorage.getItem('satori-airing');
-    const cacheTime = localStorage.getItem('satori-airing-time');
-    if (cached && cacheTime && Date.now() - Number(cacheTime) < 3600000) {
-      renderShows(JSON.parse(cached));
-      document.getElementById('seasonCount').textContent = JSON.parse(cached).length + ' shows (cached)';
-      return;
-    }
-
-    const query = '{Page(page:1,perPage:8){media(season:' + season + ',seasonYear:' + year + ',type:ANIME,sort:POPULARITY_DESC,status:RELEASING){title{romaji}nextAiringEpisode{episode}}}}';
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://graphql.anilist.co', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        try {
-          const data = JSON.parse(xhr.responseText);
-          const shows = data.data.Page.media;
-          localStorage.setItem('satori-airing', JSON.stringify(shows));
-          localStorage.setItem('satori-airing-time', String(Date.now()));
-          renderShows(shows);
-          document.getElementById('seasonCount').textContent = shows.length + ' shows loaded';
-        } catch(e) {
-          document.getElementById('airingGrid').innerHTML = '<div class="loading-text">Parse error</div>';
+    const query = `{
+      Page(page: 1, perPage: 8) {
+        media(season: ${season}, seasonYear: ${year}, type: ANIME, sort: POPULARITY_DESC, status: RELEASING) {
+          title { romaji }
+          nextAiringEpisode { episode }
         }
-      } else {
-        document.getElementById('airingGrid').innerHTML = '<div class="loading-text">Could not load (' + xhr.status + ')</div>';
       }
-    };
-    xhr.onerror = function() {
+    }`;
+
+    try {
+      const res = await fetch('https://graphql.anilist.co', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await res.json();
+      const shows = data.data.Page.media;
+      document.getElementById('seasonCount').textContent = shows.length + ' shows loaded';
+
+      const grid = document.getElementById('airingGrid');
+      grid.innerHTML = shows.slice(0, 5).map(s => `
+        <div class="airing-item">
+          <div class="airing-dot"></div>
+          <span class="airing-title">${s.title.romaji}</span>
+          <span class="airing-ep">${s.nextAiringEpisode ? 'ep ' + s.nextAiringEpisode.episode : '—'}</span>
+        </div>
+      `).join('');
+    } catch(e) {
       document.getElementById('airingGrid').innerHTML = '<div class="loading-text">Could not load — check connection</div>';
       document.getElementById('seasonCount').textContent = 'AniList unavailable';
-    };
-    xhr.send(JSON.stringify({ query }));
+    }
   }
 
   fetchAiring();
@@ -516,7 +503,8 @@
     ctx.globalAlpha = p.opacity;
     ctx.beginPath();
     ctx.ellipse(0, 0, p.size * 0.6, p.size, 0, 0, Math.PI * 2);
-    ctx.fillStyle = isDark ? '#e8a0bf' : '#c0547e';
+    const col = isDark ? '#e8a0bf' : '#c0547e';
+    ctx.fillStyle = col;
     ctx.fill();
     ctx.restore();
   }

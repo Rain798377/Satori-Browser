@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-sakura">
+<head>
+  <meta charset="UTF-8" />
+  <title>Satori</title>
+  <link rel="stylesheet" href="themes.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- MASCOT SECTION -->
+  <section class="panel mascot-panel" id="panelMascot">
+    <div class="mascot-frame">
+      <div class="mascot-avatar" id="mascotAvatar">
+        <div class="mascot-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 28c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <img id="mascotImg" src="" alt="companion" style="display:none;" />
+      </div>
+      <div class="mascot-info">
+        <div class="mascot-name" id="mascotName">Companion</div>
+        <div class="mascot-mood" id="mascotMood">idle · watching with you</div>
+      </div>
+      <button class="upload-btn" id="uploadBtn" title="Upload mascot image">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+      </button>
+      <input type="file" id="mascotUpload" accept="image/*" style="display:none;" />
+    </div>
+    <div class="mascot-speech" id="mascotSpeech">
+      <span id="speechText">どうぞ — what are we watching?</span>
+    </div>
+  </section>
+
+  <!-- THEME SWITCHER SECTION -->
+  <section class="panel theme-panel">
+    <div class="panel-header">
+      <span class="panel-title">theme</span>
+      <span class="panel-jp">テーマ</span>
+      <button class="text-btn" id="lightToggleBtn" style="margin-left:auto;">☀ light</button>
+    </div>
+    <div class="theme-grid">
+      <button class="theme-btn active" data-theme="sakura">
+        <div class="theme-swatch">
+          <span class="sw" style="background:#0f0d12;"></span>
+          <span class="sw" style="background:#d4537e;"></span>
+          <span class="sw" style="background:#f4c0d1;"></span>
+        </div>
+        <span class="theme-name">sakura</span>
+        <span class="theme-jp">桜</span>
+      </button>
+      <button class="theme-btn" data-theme="cyberpunk">
+        <div class="theme-swatch">
+          <span class="sw" style="background:#080c14;"></span>
+          <span class="sw" style="background:#00f0ff;"></span>
+          <span class="sw" style="background:#ff0099;"></span>
+        </div>
+        <span class="theme-name">cyberpunk</span>
+        <span class="theme-jp">電脳</span>
+      </button>
+      <button class="theme-btn" data-theme="shonen">
+        <div class="theme-swatch">
+          <span class="sw" style="background:#0d0d0d;"></span>
+          <span class="sw" style="background:#ff6600;"></span>
+          <span class="sw" style="background:#ffdd00;"></span>
+        </div>
+        <span class="theme-name">shonen</span>
+        <span class="theme-jp">少年</span>
+      </button>
+      <button class="theme-btn" data-theme="isekai">
+        <div class="theme-swatch">
+          <span class="sw" style="background:#0a0d18;"></span>
+          <span class="sw" style="background:#7b6fff;"></span>
+          <span class="sw" style="background:#c8b8ff;"></span>
+        </div>
+        <span class="theme-name">isekai</span>
+        <span class="theme-jp">異世界</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ANILIST TRACKER SECTION -->
+  <section class="panel tracker-panel">
+    <div class="panel-header">
+      <span class="panel-title">airing today</span>
+      <span class="panel-jp">今日放送</span>
+    </div>
+    <div id="trackerContent">
+      <div class="tracker-loading" id="trackerLoading">
+        <div class="loading-ring"></div>
+        <span>loading season…</span>
+      </div>
+      <ul class="tracker-list" id="trackerList" style="display:none;"></ul>
+      <div class="tracker-error" id="trackerError" style="display:none;">
+        connect AniList in settings
+      </div>
+    </div>
+    <div class="tracker-footer">
+      <span id="trackerSeason">—</span>
+      <button class="text-btn" id="refreshBtn">refresh</button>
+    </div>
+  </section>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>
