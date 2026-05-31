@@ -1,0 +1,13 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+browser.jar:
+    builtin-addons/satori-cipher-theme/manifest.json (manifest.json)
+    builtin-addons/satori-cipher-theme/background.js (background.js)
+    builtin-addons/satori-cipher-theme/newtab.html (newtab.html)
+    builtin-addons/satori-cipher-theme/newtab.js (newtab.js)
+    builtin-addons/satori-cipher-theme/sidebar.css (sidebar.css)
+    builtin-addons/satori-cipher-theme/sidebar.html (sidebar.html)
+    builtin-addons/satori-cipher-theme/sidebar.js (sidebar.js)
+    builtin-addons/satori-cipher-theme/themes.css (themes.css)
+    builtin-addons/satori-cipher-theme/background.html (background.html)

@@ -9,7 +9,8 @@ DIRS += [
     "webcompat",
     "pictureinpicture",
     "search-detection",
-    "newtab"
+    "newtab",
+    "satori-cipher-theme",
 ]
 
 JAR_MANIFESTS += ["jar.mn"]
